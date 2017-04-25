@@ -1,12 +1,29 @@
-<div
+<!--<div
   class="div"
   (mouseover)="ifover = true;"
   (mouseleave)="ifover = false"
   [ngClass]="{marked: ifover}">
   <h1>{{title}}</h1>
   <p>{{body}}</p>
+</div>-->
+
+
+
+
+<div id="one"
+     (click)="onClickSimple()"
+     [@clickedState]="clickInfo"></div>
+
+<br>
+<hr>
+<button (click)="isShown = !isShown">Toggle</button>
+<p
+  @showState
+  *ngIf="isShown">Hello world!</p>
+
+<hr>
+
+<div  class="div" *ngFor="let pro of projects;">
+  <h1>{{pro.name}}</h1>
+  <p>{{pro.description}}</p>
 </div>
-
-
-
-
